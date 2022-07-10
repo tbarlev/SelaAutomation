@@ -14,7 +14,6 @@ def validate(passwd):
     global reason
 
     if len(passwd) < 10:
-        print(len(passwd))
         reason = "Password should be at least 10 charachters"
         return 1
 
