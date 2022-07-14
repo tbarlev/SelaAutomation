@@ -31,9 +31,20 @@ def validate(passwd):
 
     return 0
 
+# validate input arguments
+if len(sys.argv) == 3:
+    if sys.argv[1] == "-f":
+        fl = open(sys.argv[2], "r")
+        passwd = fl.read()
+else:
+    if len(sys.argv) == 2:
+            passwd = sys.argv[1]
 
+    else:
+        print("Incorrect arguments")
+        exit()
 
-passwd = sys.argv[1]
+# passwd = sys.argv[1]
 
 if validate(passwd):
         print(Fore.RED + "password is not valid, " + reason)
